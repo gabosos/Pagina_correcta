@@ -1,0 +1,85 @@
+:root {
+	--ink: #050505;
+	--white: #ffffff;
+	--yellow: #fff000;
+	--green: #158c30;
+	--green-dark: #086d26;
+	--blue: #68c9f2;
+	--violet: #6774f1;
+	--red: #cc392a;
+	--gold: #ffd329;
+	--purple: #302d70;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--white); font-family: Arial, Helvetica, sans-serif; }
+
+.topbar { height: 85px; padding: 0 5.3%; display: flex; align-items: center; justify-content: space-between; background: var(--ink); color: var(--white); }
+.brand { display: inline-flex; align-items: center; color: var(--white); text-decoration: none; }
+.brand-logo { width: 151px; height: auto; display: block; transition: transform .25s ease; }
+.brand:hover .brand-logo { transform: scale(1.04); }
+.nav { display: flex; align-items: center; gap: clamp(28px, 5vw, 66px); margin-left: auto; margin-right: 5%; }
+.nav a { position: relative; color: var(--white); text-decoration: none; font-size: 16px; font-weight: 700; }
+.nav a::after { content: ""; height: 2px; width: 0; position: absolute; left: 0; bottom: -7px; background: var(--yellow); transition: width .25s ease; }
+.nav a:hover::after { width: 100%; }
+.actions { display: flex; gap: 27px; align-items: center; }
+.search-icon, .bag-icon { width: 22px; height: 22px; display: block; position: relative; }
+.search-icon { border: 1.8px solid var(--white); border-radius: 50%; }
+.search-icon::after { content: ""; width: 9px; height: 2px; position: absolute; right: -6px; bottom: -3px; background: var(--white); transform: rotate(48deg); }
+.bag-icon { border: 1.7px solid var(--white); border-radius: 4px 4px 7px 7px; margin-top: 5px; }
+.bag-icon::before { content: ""; width: 8px; height: 7px; position: absolute; left: 5px; top: -7px; border: 1.7px solid var(--white); border-bottom: 0; border-radius: 8px 8px 0 0; }
+
+.hero { min-height: 510px; position: relative; overflow: hidden; padding: 77px 5.3% 115px; background: linear-gradient(112deg, var(--violet) 0%, #7581f6 48%, var(--blue) 100%); color: var(--white); }
+.hero::after { content: ""; width: 78%; height: 145px; position: absolute; right: -10%; bottom: -95px; background: var(--white); border-radius: 50% 0 0 0; transform: rotate(-4deg); }
+.yellow-spark { width: 58px; height: auto; position: absolute; top: 18px; left: 5.3%; z-index: 2; transition: transform .25s ease; }
+.yellow-spark:hover { transform: rotate(-7deg) scale(1.08); }
+.hero-copy { max-width: 485px; position: relative; z-index: 2; }
+h1 { margin: 0 0 13px; font-size: clamp(48px, 5.5vw, 59px); line-height: .86; font-weight: 300; letter-spacing: -2px; }
+.intro { max-width: 400px; margin: 0 0 14px; font-size: 18px; line-height: 1.27; }
+.cta { display: inline-block; padding: 21px 27px; border-radius: 40px; background: var(--yellow); color: var(--ink); text-decoration: none; font-size: 16px; font-weight: 800; transition: transform .2s ease, background .2s ease; }
+.cta:hover { background: #ffffff; transform: translateY(-4px) scale(1.03); }
+
+.product-stage { width: 48%; height: 390px; position: absolute; right: 1%; top: 19px; z-index: 1; }
+.product-image { width: min(480px, 100%); height: auto; position: absolute; right: 0; top: -35px; display: block; transition: transform .35s ease; }
+.product-image:hover { transform: translateY(-8px) rotate(1deg) scale(1.03); }
+.packet { width: 215px; height: 318px; position: absolute; padding-top: 71px; border: 4px solid var(--green-dark); border-radius: 5px 5px 18px 18px; background: linear-gradient(110deg, #159d3e, #087a27 72%, #54b94c); box-shadow: 12px 18px 14px rgba(0,0,0,.16); color: var(--white); text-align: center; transform: rotate(-5deg); transition: transform .35s ease; }
+.packet:hover { transform: rotate(-2deg) translateY(-10px); }
+.packet::before { content: ""; height: 17px; position: absolute; left: -4px; right: -4px; top: -4px; border-bottom: 4px solid var(--green-dark); background: #259947; }
+.packet.back { right: 2%; top: 49px; transform: rotate(13deg) scale(.9); opacity: .95; z-index: -1; }
+.packet.back:hover { transform: rotate(15deg) scale(.9) translateY(-10px); }
+.packet.front { right: 26%; top: 17px; }
+.packet-logo { font-size: 13px; font-weight: 900; font-style: italic; }
+.packet h2 { margin: 22px 0 1px; font-size: 43px; line-height: .78; letter-spacing: -3px; }
+.packet h2 span { display: block; font-size: 38px; }
+.kernels { margin: 15px auto 7px; font-size: 46px; letter-spacing: -13px; transform: rotate(-8deg); }
+.flavor { font-size: 14px; border-top: 1px solid rgba(255,255,255,.4); padding-top: 7px; margin: 0 16px; }
+.weight { position: absolute; bottom: 13px; left: 0; right: 0; font-size: 9px; }
+
+.lower { min-height: 145px; position: relative; display: flex; align-items: end; gap: clamp(65px, 8vw, 125px); padding: 0 5.3% 15px; background: var(--white); }
+.stats { display: flex; align-items: center; gap: 12px; }
+.stats strong { font-size: 30px; white-space: nowrap; }
+.stats span { max-width: 85px; font-size: 13px; line-height: 1.05; }
+.flavors { display: flex; align-items: center; gap: 29px; position: absolute; right: 8%; top: -12px; }
+.flavor-item { width: 55px; text-align: center; font-size: 12px; line-height: 1.05; }
+.flavor-item i { width: 38px; height: 38px; display: block; margin: 8px auto 0; border-radius: 50%; background: var(--green); transition: transform .25s ease; }
+.flavor-item:hover i { transform: scale(1.18); }
+.flavor-item:nth-child(2) i { background: var(--red); }
+.flavor-item:nth-child(3) i { background: var(--gold); }
+.flavor-item:nth-child(4) i { background: var(--purple); }
+
+@media (max-width: 760px) {
+	.topbar { height: 74px; padding: 0 22px; }
+	.nav { display: none; }
+	.actions { margin-left: auto; }
+	.hero { min-height: 690px; padding: 72px 28px 120px; }
+	h1 { font-size: 52px; }
+		.product-stage { width: 100%; right: -7%; top: 315px; transform: scale(.82); transform-origin: top right; }
+	.hero::after { width: 125%; bottom: -102px; }
+	.lower { min-height: 210px; padding: 74px 22px 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: end; }
+	.stats { gap: 7px; }
+	.stats strong { font-size: 22px; }
+	.stats span { font-size: 11px; }
+	.flavors { top: 5px; right: 15px; gap: 10px; }
+	.flavor-item { font-size: 10px; }
+}
